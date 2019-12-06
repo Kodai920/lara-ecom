@@ -101,7 +101,7 @@ class ProductsController extends Controller
             $image = $request->image;
             $image_new_name = time().$image->getClientOriginalName();
             $image->move('uploads/products/',$image_new_name);
-            $product->image=asset('uploads/products/'.$image_new_name);
+            $product->image=secure_asset('uploads/products/'.$image_new_name);
         }
 
         $product->name = $request->name;
